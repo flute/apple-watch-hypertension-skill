@@ -6,6 +6,7 @@ NAME = "apple-watch-hypertension"
 ROOT = Path(__file__).resolve().parents[1]
 TOP_FILES = [
     "SKILL.md",
+    "install.command",
     "README.md",
     "README.en.md",
     "LICENSE",
@@ -19,7 +20,7 @@ def runtime_files(root=ROOT):
     root = Path(root)
     result = [root / name for name in TOP_FILES]
     result += [p for p in (root / "scripts").rglob("*.py") if "__pycache__" not in p.parts]
-    result += [root / "scripts/local-only.sb"]
+    result += [root / "scripts/local-only.sb", root / "scripts/run.command"]
     result += list((root / "references").glob("*.md"))
     result += list((root / "references").glob("*.json"))
     for path in result:
@@ -30,7 +31,7 @@ def runtime_files(root=ROOT):
 
 def workbuddy_manifest(text):
     head, body = text.split("---", 2)[1:]
-    extra = """version: "0.1.0"
+    extra = """version: "0.2.0"
 author: flute
 display_name: Apple Watch 高血压通知
 display_name_en: Apple Watch Hypertension Notifications

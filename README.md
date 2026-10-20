@@ -10,22 +10,19 @@
 
 ## 安装
 
-下载这个仓库，选一种方式：
+**第一次用？从[完整新手教程](references/beginner.zh-CN.md)开始**：如何下载、打开终端、拖入文件、选择 Agent，以及报错、更新和卸载，都写在里面。
 
-```sh
-git clone https://github.com/flute/apple-watch-hypertension-skill.git
-cd apple-watch-hypertension-skill
+不需要先装 Python、Git、Homebrew 或 Xcode：
 
-# Codex
-python3 scripts/install.py --agent codex
+1. 从[最新发布页](https://github.com/flute/apple-watch-hypertension-skill/releases/latest)下载 **apple-watch-hypertension.zip** 并解压。
+2. 按 **⌘ + 空格**，输入“终端”，回车打开。
+3. 输入 `bash `（后面留一个空格），把解压目录里的 **install.command** 拖进终端，回车。
+4. 输入 **1** 安装到 Codex，**2** 安装到 Claude Code；其他模式看教程。程序会准备独立 Python 3.11 和固定依赖。
+5. 看到“安装完成”后，重新打开 Agent 对话。安装本身不会连接手机或开启定位。
 
-# Claude Code
-python3 scripts/install.py --agent claude
-```
+**WorkBuddy：**下载 **apple-watch-hypertension-workbuddy.zip**，在技能管理里导入；本地运行环境仍需准备，按[详细步骤](references/beginner.zh-CN.md#5-workbuddy-怎么装)完成。
 
-**WorkBuddy：**从 [Releases](https://github.com/flute/apple-watch-hypertension-skill/releases) 下载 `apple-watch-hypertension-workbuddy.zip`，在技能页面导入 ZIP。
-
-其他支持 `SKILL.md` 的 Agent，可以使用 `python3 scripts/install.py --target /你的/skills/目录`。安装后重新加载技能或新开对话。Skill 不会给 Agent 增加本来没有的 USB 或手机控制能力。
+**豆包 / DeepSeek：**普通聊天可以指导你；能否自动执行取决于有没有连接这台 Mac 的本地工具。DeepSeek 等模型接入 Claude Code 等本地 Agent 时，按宿主安装。详见[适配表与选择建议](references/agents.md)，不把“能聊天”当成“能操作 USB”。
 
 ## 怎么用
 
@@ -33,7 +30,7 @@ python3 scripts/install.py --agent claude
 
 > 使用 apple-watch-hypertension，帮我检查并开通 Apple Watch 高血压通知。若需要，我同意用本地 USB CarKit 临时提供香港定位。需要我操作时请告诉我并等待；结束后确认真实位置恢复，而且通知仍开启。
 
-准备好：**Mac、与手表配对的 iPhone、USB 数据线、[uv](https://docs.astral.sh/uv/getting-started/installation/)**。Agent 会检查其余条件并安装固定版本的依赖。没有手机控制工具也能用，手机上的步骤由你完成、确认。
+准备好：**Mac、与手表配对的 iPhone、USB 数据线**。安装程序准备运行环境，Agent 检查其余条件。没有手机控制工具也能用，手机上的步骤由你完成、确认。
 
 ## 它会怎么做
 

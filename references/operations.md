@@ -1,5 +1,7 @@
 # Runbook
 
+For beginners use [the detailed guide](beginner.zh-CN.md) ([English](beginner.en.md)); check [host capabilities](agents.md). From the skill root, `bash install.command --prepare` prepares dependencies without preinstalled Python/Git. The installer stores uv at `$HOME/Library/Application Support/apple-watch-hypertension/tools/uv`; when following the commands below, use that absolute path in place of `uv` if uv is not on PATH. The prepared `bash scripts/run.command doctor` wrapper runs the same tool without uv on PATH; other watchbp subcommands work the same way. Identity import can use `.venv/bin/python scripts/import_diplay_identity.py` after setup.
+
 These commands run from the skill root. `uv` must already be installed from its [official instructions](https://docs.astral.sh/uv/getting-started/installation/). Never pipe an unreviewed install command into a shell. Python 3.11+ is required; `uv` can select an existing interpreter. If dependencies or USB are unavailable, explain the missing capability and ask for the necessary local action.
 
 ## Setup (network access)

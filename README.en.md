@@ -10,22 +10,17 @@ For Codex, Claude Code, WorkBuddy, and other local agents on a Mac. The agent ha
 
 ## Install
 
-Clone the repository and choose one:
+**New to Terminal? Follow the [complete beginner guide](references/beginner.en.md).** No preinstalled Python, Git, Homebrew or Xcode is required.
 
-```sh
-git clone https://github.com/flute/apple-watch-hypertension-skill.git
-cd apple-watch-hypertension-skill
+1. Download **apple-watch-hypertension.zip** from the [latest release](https://github.com/flute/apple-watch-hypertension-skill/releases/latest) and unzip it.
+2. Press **Command + Space**, type **Terminal**, then Return.
+3. Type `bash ` including the trailing space, drag **install.command** into Terminal, then press Return.
+4. Enter **1** for Codex or **2** for Claude Code. The installer prepares isolated Python 3.11 and locked dependencies.
+5. Wait for **Setup complete**, then reload the agent's skills. Installation does not connect to your phone or transmit location.
 
-# Codex
-python3 scripts/install.py --agent codex
+**WorkBuddy:** import **apple-watch-hypertension-workbuddy.zip** through skill management, then [prepare the local runtime](references/beginner.en.md#workbuddy).
 
-# Claude Code
-python3 scripts/install.py --agent claude
-```
-
-**WorkBuddy:** download `apple-watch-hypertension-workbuddy.zip` from [Releases](https://github.com/flute/apple-watch-hypertension-skill/releases) and import it on the Skills page.
-
-For another `SKILL.md` host, use `python3 scripts/install.py --target /your/skills/directory`. Reload skills or start a new conversation. Installing a skill does not grant an agent USB access or phone UI tools it does not already have.
+**Doubao / DeepSeek:** ordinary chat can guide a person; automation requires a verified executor on the Mac connected to the phone. When these models run inside a local agent, install for that host. See the [compatibility table](references/agents.md).
 
 ## Use
 
@@ -33,7 +28,7 @@ Send your agent:
 
 > Use apple-watch-hypertension to check and set up Apple Watch hypertension notifications. If needed, I authorize temporary Hong Kong location over local USB CarKit. Ask and wait when you need my help. Finish by confirming my real location has returned and notifications remain enabled.
 
-Have a **Mac, the iPhone paired with your Watch, a USB data cable, and [uv](https://docs.astral.sh/uv/getting-started/installation/)** ready. The agent checks the remaining requirements and installs pinned dependencies. Without phone UI tools, you perform and confirm the phone steps.
+Have a **Mac, the iPhone paired with your Watch, a USB data cable** ready. The installer prepares dependencies; the agent checks remaining requirements. Without phone UI tools, you perform and confirm the phone steps.
 
 ## What happens
 

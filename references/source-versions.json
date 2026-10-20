@@ -14,6 +14,15 @@
   "installation_docs": [
     "https://learn.chatgpt.com/docs/build-skills",
     "https://code.claude.com/docs/en/skills",
-    "https://open.workbuddy.cn/docs/skill"
-  ]
+    "https://open.workbuddy.cn/docs/skill",
+    "https://docs.astral.sh/uv/getting-started/installation/",
+    "https://docs.astral.sh/uv/guides/install-python/",
+    "https://api-docs.deepseek.com/quick_start/agent_integrations/claude_code/",
+    "https://docs.volcengine.com/docs/82379/2479140?lang=zh"
+  ],
+  "uv_bootstrap": {
+    "version": "0.9.25",
+    "aarch64_apple_darwin_sha256": "606b3c6949d971709f2526fa0d9f0fd23ccf60e09f117999b406b424af18a6a6",
+    "x86_64_apple_darwin_sha256": "4982dfff14b3548bc85d0fa0abec6ab8ae62836b218bf1223741ba1392ef93bf"
+  }
 }
