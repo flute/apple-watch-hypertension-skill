@@ -1,0 +1,19 @@
+{
+  "playport": {
+    "url": "https://github.com/youcci/playport",
+    "commit": "9a0882dd0ffe48e467b59d58b12d81391df55ade"
+  },
+  "accessory-location": {
+    "url": "https://github.com/aur3l14no/accessory-location",
+    "commit": "8a13296a3d81dae18ad4481e7a9eca913c2c644f"
+  },
+  "diplay": {
+    "release": "v0.2.7",
+    "apk_sha256": "27b434462da7e78b1ff0987d129ed0a4b0a0e56beceaf8ec221d47150d4675bd"
+  },
+  "installation_docs": [
+    "https://learn.chatgpt.com/docs/build-skills",
+    "https://code.claude.com/docs/en/skills",
+    "https://open.workbuddy.cn/docs/skill"
+  ]
+}
