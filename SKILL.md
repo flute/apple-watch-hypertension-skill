@@ -1,10 +1,10 @@
 ---
 name: apple-watch-hypertension
-description: Use when a user wants to set up or verify Apple Watch hypertension notifications, including a locally authorized macOS USB CarKit/iAP2 location workflow. Also applies to 高血压通知开通、地区不可用、停止定位后核验. Does not apply to measuring blood pressure or diagnosing hypertension.
+description: Use when a user in mainland China or another unsupported region wants to enable Apple Watch hypertension notifications, or verify setup and real-location restoration through an authorized local macOS USB workflow. Also applies to 中国大陆高血压通知开通、所在地区不可用、停止定位后核验. Does not apply to measuring blood pressure or diagnosing hypertension.
 license: GPL-3.0-only
 metadata:
   compatibility: Live device operations require a local macOS host, Python 3.11+, uv, a trusted USB iPhone paired with a compatible Apple Watch, and either phone UI control or human assistance.
-  version: "0.2.0"
+  version: "0.2.1"
   author: flute
 ---
 

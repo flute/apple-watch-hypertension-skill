@@ -1,56 +1,54 @@
-# First-time setup, without Python or Git
+# Beginner guide: notifications unavailable in your region
 
-You need a **Mac**, a compatible Apple Watch, its paired iPhone and a USB data cable. This enables hypertension **notifications**, not numerical blood-pressure readings. Hardware, OS and eligibility requirements still apply.
+For mainland China and other regions where the feature is unavailable. Have a **Mac, a compatible Apple Watch, its paired iPhone and a USB data cable** ready. No programming experience or preinstalled Python, Git or Homebrew is needed.
 
-You do not need to preinstall Python, Git, Homebrew or Xcode. Installing a skill does not install an AI product or provide a subscription. Choose a local agent that can run commands on the Mac connected to your phone. Read the [compatibility table](agents.md): a model name is not an execution environment.
-
-## Download
-
-1. Open the [latest release](https://github.com/flute/apple-watch-hypertension-skill/releases/latest) in your Mac browser.
-2. Expand **Assets** and download **apple-watch-hypertension.zip**, not “Source code.”
-3. Open Finder (the blue face in the Dock), select Downloads and double-click the ZIP. Your browser may already have extracted it.
-4. Open the extracted folder. You should see SKILL.md, install.command and scripts. Keep this folder if using manual/WorkBuddy mode.
-5. If GitHub is unreachable, fix access or obtain the unchanged release from someone you trust. Do not run random mirror/accelerator scripts. SHA256SUMS is available in the same release.
-
-## Open Terminal and install
-
-1. Press **Command + Space**, type **Terminal**, then Return. Alternatively open Finder → Applications → Utilities → Terminal.
-2. In Terminal type `bash ` including the trailing space. Do not press Return yet.
-3. Drag **install.command** from Finder into Terminal. This inserts its path, including any necessary escaping.
-4. Click Terminal and press Return.
-5. Enter **1** for Codex, **2** for Claude Code, **3** to prepare the current folder for WorkBuddy/manual use, or **4** for a known custom skills-parent directory. Press Return. Enter **q** to quit without installing.
-6. Option 4 asks for an absolute path starting with `/`; it creates an apple-watch-hypertension folder below it. Do not copy placeholder paths.
-7. Wait for **Setup complete** and the installation path. On first run, it downloads pinned uv, managed Python 3.11 and locked dependencies. Progress and speed depend on your network.
-8. If an error appears, setup is incomplete. Keep the last few lines for help. No phone action or location transmission starts during installation.
-
-We cannot assume Python is installed or recent enough. This installer prepares an isolated environment without changing system Python or shell startup files. No administrator password, sudo, Homebrew or Xcode is required. Run with bash as above; do not disable Gatekeeper.
-
-## Load the skill
-
-Restart/reload skills in your agent or open a new conversation. If it cannot find the skill, give it the full installation path and ask it to read SKILL.md there.
-
-Send:
-
-> Use apple-watch-hypertension to check and set up Apple Watch hypertension notifications. First confirm you can execute commands locally on this Mac. If needed, I authorize temporary Hong Kong location over local USB CarKit. Ask for one human action at a time and wait. At the end confirm transmission has stopped, real location is restored, and notifications remain enabled. Installation success is not activation success.
-
-The agent should inspect compatibility and existing settings first. If already enabled, no repeated location session is needed. A cloud container cannot access your USB merely because its interface runs on your Mac.
+Choose your existing AI app below. Install and sign into the app itself first; it must be able to execute commands on this Mac.
 
 ## WorkBuddy
 
-1. Download **apple-watch-hypertension-workbuddy.zip** separately. Keep it zipped.
-2. Open WorkBuddy skill management → Add/import skill ZIP (labels vary by version), select it and wait for it to appear.
-3. Start a new conversation and ask the agent to check local Mac command access.
-4. Importing the skill does not prepare dependencies. If the import directory is accessible, have the agent run `bash install.command --prepare` there.
-5. Otherwise prepare the regular extracted ZIP with menu option **3**, keep that folder and provide its full path to the agent so it uses that SKILL.md and its scripts.
-6. Cloud-only or script-restricted modes cannot directly automate this workflow. Use human-assisted execution or a local host.
+1. Open the [latest download page](https://github.com/flute/apple-watch-hypertension-skill/releases/latest).
+2. Under **Assets**, download **apple-watch-hypertension-workbuddy.zip**. Keep it zipped.
+3. Open WorkBuddy skill management → **Add skill / Import ZIP**, then select the file. Labels may vary.
+4. Wait for the skill to appear, start a new conversation and send the prompt under “Start setup” below.
+5. Let the agent prepare the runtime and inspect compatibility. Import success is not activation success.
 
-The import format is adapted to official documentation; imports and hardware operations have not been tested across WorkBuddy versions.
+**Cannot find the skill files or prepare dependencies?** First check that WorkBuddy can run commands on this Mac. If only the import directory is inaccessible, download and extract the regular **apple-watch-hypertension.zip**. Follow the Terminal instructions below, choosing **3** instead of 1. Keep that folder and give WorkBuddy its full path to read SKILL.md and use its scripts.
 
-## Doubao and DeepSeek
+Cloud-only command execution cannot control your Mac USB. Use a local execution mode or host. WorkBuddy's import format is adapted; hardware operation is not yet verified.
 
-Their normal web/mobile chat should be treated as a guide unless a verified local Mac executor is connected. Uploading Markdown does not grant USB access. A person must run local commands and report sanitized results. This is an expert-assisted mode, not a complete standalone beginner walkthrough for chat-only products.
+## Codex
 
-When DeepSeek is the model inside Claude Code or another local agent, install for that host. DeepSeek officially documents such integrations. Volcengine documents coding-tool integrations for its model services; that does not establish compatibility with the ordinary Doubao app. See [sources and the capability checklist](agents.md). Configure optional model accounts locally; never send API keys to chat. The USB tool itself needs no AI API key.
+### Download
+
+1. Open the [download page](https://github.com/flute/apple-watch-hypertension-skill/releases/latest), expand **Assets**, and download **apple-watch-hypertension.zip**.
+2. Open Finder (the blue face in the Dock) → Downloads.
+3. Double-click the ZIP to extract it. Your browser may already have done so.
+4. Open the folder containing **SKILL.md, install.command and scripts**. Do not choose developer “Source code” downloads.
+
+### Open Terminal and install
+
+1. Press **Command + Space**, type **Terminal**, then Return.
+2. Type `bash ` with a trailing space. Do not press Return yet.
+3. Drag **install.command** from Finder into Terminal to insert its path.
+4. Click Terminal, press Return, then enter **1** and Return at the menu.
+5. Wait for **Setup complete**. If an error appears, use troubleshooting below.
+6. Start a new Codex conversation and send the prompt below. Restart Codex if the skill is missing; if needed, provide the full installation path printed by setup.
+
+The installer prepares isolated Python 3.11 and dependencies. It does not change system Python or require sudo, administrator passwords or Xcode. Cancel any developer-tools prompt and follow the steps above.
+
+Menu **2** is for Claude Code; **3** prepares the current folder only; **4** takes another agent's known skills-parent directory; **q** quits. Codex users choose **1**.
+
+## Start setup
+
+Send:
+
+> Use apple-watch-hypertension to help enable Apple Watch hypertension notifications unavailable due to my region. Check compatibility and prepare the local runtime first. I authorize temporarily supplying Hong Kong location over USB. Ask and wait when you need my help. Finish by stopping transmission, confirming real location is restored, and rechecking that notifications remain enabled.
+
+If native setup already works, use Health normally. This workflow addresses regional unavailability; it cannot add hardware support or bypass personal eligibility.
+
+## Other AI apps
+
+Claude Code uses installer option **2**. See [compatibility](agents.md) for other hosts. Ordinary Doubao/DeepSeek web and mobile chat cannot directly install and execute this skill. No model API configuration is needed for this workflow. If these models already run inside a local agent, install for that host.
 
 ## What you may need to do on the phone
 

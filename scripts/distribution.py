@@ -31,11 +31,11 @@ def runtime_files(root=ROOT):
 
 def workbuddy_manifest(text):
     head, body = text.split("---", 2)[1:]
-    extra = """version: "0.2.0"
+    extra = """version: "0.2.1"
 author: flute
-display_name: Apple Watch 高血压通知
+display_name: Apple Watch 高血压通知地区开通
 display_name_en: Apple Watch Hypertension Notifications
-description_zh: 在 macOS 上检查、设置并核验 Apple Watch 高血压通知，按需请求用户协助并恢复真实定位。
+description_zh: 帮助中国大陆等尚未开放地区的用户开通 Apple Watch 高血压通知，完成后恢复真实定位并复查通知。
 description_en: Set up and verify Apple Watch hypertension notifications on macOS with human assistance and real-location restoration.
 """
     return "---\n" + head.strip() + "\n" + extra + "---" + body

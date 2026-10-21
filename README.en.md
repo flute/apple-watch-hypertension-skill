@@ -1,50 +1,66 @@
-# Apple Watch Hypertension Notifications Skill
+# Enable Apple Watch Hypertension Notifications in Unsupported Regions
 
 [简体中文](README.md)
 
-**Let an AI agent check, set up, and verify Apple Watch hypertension notifications.**
+**Your Watch supports the feature, but Health says it is unavailable in your region? Let an AI agent help enable it and restore your real location afterward.**
 
-For Codex, Claude Code, WorkBuddy, and other local agents on a Mac. The agent handles available automation, asks you to connect/unlock or answer health questions when needed, and waits. It finishes by stopping the sender, verifying your real location, and checking that notifications remain on.
+This skill is for users in **mainland China and other regions where hypertension notifications are not available**. It connects an iPhone to a Mac, temporarily supplies a Hong Kong location, and assists with Health setup. The agent asks and waits when you need to connect, unlock or answer a question.
 
-> This enables notifications, not blood-pressure measurement. Compatible hardware, software, and eligibility are required. Regional approval or device changes may prevent setup; success is not guaranteed for every Apple Watch.
+**WorkBuddy and Codex are the main setup paths**, with Claude Code and other local agents also supported. If the feature already works in your region, follow [Apple's normal setup steps](https://support.apple.com/en-us/117296).
 
-## Install
+## What you need
 
-**New to Terminal? Follow the [complete beginner guide](references/beginner.en.md).** No preinstalled Python, Git, Homebrew or Xcode is required.
+- A **Mac** with **WorkBuddy or Codex** able to execute local commands.
+- A compatible **Apple Watch** and its paired **iPhone**.
+- A **USB data cable**.
 
-1. Download **apple-watch-hypertension.zip** from the [latest release](https://github.com/flute/apple-watch-hypertension-skill/releases/latest) and unzip it.
+No preinstalled Python, Git or Homebrew is needed. Apple's [hardware, software and eligibility requirements](https://support.apple.com/en-us/117296) still apply. This tool cannot add support to incompatible hardware.
+
+## Install for your agent
+
+### WorkBuddy
+
+1. Open the [download page](https://github.com/flute/apple-watch-hypertension-skill/releases/latest) and download **apple-watch-hypertension-workbuddy.zip** under **Assets**.
+2. Open WorkBuddy skill management → **Add skill / Import ZIP**. Import the ZIP without extracting it.
+3. Start a new conversation and send the prompt below. Let the agent prepare the runtime and check your setup.
+
+Cannot find import or run local commands? See the [WorkBuddy walkthrough](references/beginner.en.md#workbuddy).
+
+### Codex
+
+1. Download **apple-watch-hypertension.zip** from the [download page](https://github.com/flute/apple-watch-hypertension-skill/releases/latest) and double-click to unzip.
 2. Press **Command + Space**, type **Terminal**, then Return.
-3. Type `bash ` including the trailing space, drag **install.command** into Terminal, then press Return.
-4. Enter **1** for Codex or **2** for Claude Code. The installer prepares isolated Python 3.11 and locked dependencies.
-5. Wait for **Setup complete**, then reload the agent's skills. Installation does not connect to your phone or transmit location.
+3. Type `bash ` with a trailing space. Drag **install.command** from the extracted folder into Terminal, then press Return.
+4. Enter **1** and Return. Wait for **Setup complete**, then start a new Codex conversation.
 
-**WorkBuddy:** import **apple-watch-hypertension-workbuddy.zip** through skill management, then [prepare the local runtime](references/beginner.en.md#workbuddy).
+The installer prepares Python and dependencies. See the [beginner walkthrough](references/beginner.en.md#codex) if you have never used Terminal.
 
-**Doubao / DeepSeek:** ordinary chat can guide a person; automation requires a verified executor on the Mac connected to the phone. When these models run inside a local agent, install for that host. See the [compatibility table](references/agents.md).
+**Claude Code / other agents:** see [compatibility](references/agents.md). Ordinary Doubao and DeepSeek web/mobile chat cannot directly install and execute this skill.
 
-## Use
+## Send this to your agent
 
-Send your agent:
+> Use apple-watch-hypertension to help enable Apple Watch hypertension notifications unavailable due to my region. Check compatibility and prepare the local runtime first. I authorize temporarily supplying Hong Kong location over USB. Ask and wait when you need my help. Finish by stopping transmission, confirming real location is restored, and rechecking that notifications remain enabled.
 
-> Use apple-watch-hypertension to check and set up Apple Watch hypertension notifications. If needed, I authorize temporary Hong Kong location over local USB CarKit. Ask and wait when you need my help. Finish by confirming my real location has returned and notifications remain enabled.
+Follow the prompts to connect and unlock your phone and answer Health questions truthfully. You do not need to understand the code or protocol.
 
-Have a **Mac, the iPhone paired with your Watch, a USB data cable** ready. The installer prepares dependencies; the agent checks remaining requirements. Without phone UI tools, you perform and confirm the phone steps.
+## What counts as completion
 
-## What happens
+The agent must confirm:
 
-1. Check compatibility and current settings. Skip changes if already enabled; use normal setup when available.
-2. Only if needed and authorized, authenticate locally with MFi-v3 and send Hong Kong NMEA through USB CarKit. **No AnyGo cloud dependency.**
-3. Verify the actual position in Maps, then complete Health setup using your truthful eligibility answers.
-4. Stop, unplug USB, verify your real location, and recheck notifications. Missing evidence is reported as incomplete.
+1. Maps adopted the temporary Hong Kong position.
+2. Health shows hypertension notifications enabled.
+3. Transmission stopped and you unplugged USB.
+4. Maps returned to your real location, and notifications are still enabled after reopening Health.
 
-The repository **does not contain certificates or private keys**. Use your own matching identity, or ask the agent to extract the experimental identity locally from the specified DiPlay APK. Credentials stay on your Mac; the experimental identity can stop working. IP networking is denied for the sender; each session lasts at most ten minutes.
+Missing evidence means incomplete setup. To cancel, say: **“Stop transmission and restore real location.”**
 
-## Verification and limits
+## Before you use it
 
-The workflow succeeded in one S12 device session, including restoration checks. The packaged scripts pass offline tests. Claude / WorkBuddy installation formats are adapted but have not each been tested against a live device. See the [retrospective](references/retrospective.md) and [runbook](references/operations.md).
+- These are **hypertension notifications**, not blood-pressure readings or a diagnosis.
+- Uses local USB, with **no AnyGo cloud dependency**. Credentials are not bundled; the agent follows instructions to prepare them locally. Experimental credentials may stop working.
+- One **S12 + Codex** session completed setup, location restoration and notification rechecks. WorkBuddy's import format is adapted but hardware operation remains untested. Success is not guaranteed across devices, OS versions or regions.
+- Regional availability changes; check [Apple's current list](https://www.apple.com/watchos/feature-availability/#health-hypertension-notifications).
 
-Developer checks (source checkout only): `uv sync --frozen && uv run pytest -q && uv run ruff check scripts tests`
-
-[Apple instructions](https://support.apple.com/en-us/117296) · [Region/model availability](https://www.apple.com/watchos/feature-availability/#health-hypertension-notifications) · [Code provenance and licenses](THIRD_PARTY_NOTICES.md)
+[Beginner guide and troubleshooting](references/beginner.en.md) · [Agent compatibility](references/agents.md) · [Retrospective](references/retrospective.md) · [Technical runbook](references/operations.md) · [Code provenance](THIRD_PARTY_NOTICES.md)
 
 GPL-3.0-only. Independent project; not affiliated with Apple.
