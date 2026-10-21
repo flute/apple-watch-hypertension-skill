@@ -1,16 +1,16 @@
-# 为中国大陆等地区开通 Apple Watch 高血压通知
+# 为未开放地区开通 Apple Watch 高血压通知
 
 [English](README.en.md)
 
 **手表支持，但“健康”里提示所在地区不可用？让 AI 帮你开通，结束后确认真实定位已恢复。**
 
-这个 Skill 面向**中国大陆等尚未开放高血压通知的地区**。AI 自动执行本地开通流程：通过 Mac 连接 iPhone，临时提供香港定位，协助完成健康设置；需要你插线、解锁或回答问题时，AI 会提示并等待。
+这个 Skill 面向**尚未开放高血压通知的地区**。AI 自动执行本地开通流程：通过 Mac 连接 iPhone，临时提供香港定位，协助完成健康设置；需要你插线、解锁或回答问题时，AI 会提示并等待。
 
-**优先提供 WorkBuddy、Codex 的使用入口**，也支持 Claude Code 等本地 Agent。若你所在地区已支持、能在“健康”中正常开启，直接按 [Apple 官方步骤](https://support.apple.com/en-us/117296)设置即可。
+支持 **Claude Code、Codex、WorkBuddy** 等 Mac 本地 Agent。若你所在地区已支持、能在“健康”中正常开启，直接按 [Apple 官方步骤](https://support.apple.com/en-us/117296)设置即可。
 
 ## 先准备这些
 
-- 一台 **Mac**，装有能在本机执行操作的 **WorkBuddy 或 Codex**。
+- 一台 **Mac**，装有能在本机执行操作的 **Claude Code、Codex 或 WorkBuddy**。
 - 支持高血压通知的 **Apple Watch**，以及与它配对的 **iPhone**。
 - 一根能传输数据的 **USB 数据线**。
 
@@ -18,13 +18,14 @@
 
 ## 安装：选你正在用的 AI
 
-### WorkBuddy
+### Claude Code
 
-1. 打开[下载页](https://github.com/flute/apple-watch-hypertension-skill/releases/latest)，在 **Assets** 中下载 **apple-watch-hypertension-workbuddy.zip**。
-2. 打开 WorkBuddy 的技能管理，选择**添加技能 / 导入 ZIP**，导入这个文件，不用解压。
-3. 新开对话，发送下一节的指令，让它准备环境并开始检查。
+1. 在[下载页](https://github.com/flute/apple-watch-hypertension-skill/releases/latest)下载 **apple-watch-hypertension.zip**，双击解压。
+2. 按 **⌘ + 空格**，输入“终端”，回车打开。
+3. 输入 `bash `，注意末尾留一个空格。把解压文件夹中的 **install.command** 拖进终端，再按回车。
+4. 输入 **2** 并回车，等到显示“安装完成”。然后在 Claude Code 新开对话。
 
-找不到导入按钮，或提示无法执行本地命令？看[新手教程：WorkBuddy](references/beginner.zh-CN.md#workbuddy)。
+安装程序会自动准备 Python 和依赖。不会使用终端？看[一步一步的新手教程](references/beginner.zh-CN.md#claude-code)。
 
 ### Codex
 
@@ -35,7 +36,15 @@
 
 安装程序会自动准备 Python 和依赖。不会使用终端？看[一步一步的新手教程](references/beginner.zh-CN.md#codex)。
 
-**Claude Code / 其他 Agent：**见[适配说明](references/agents.md)。豆包、DeepSeek 的普通网页和手机聊天不支持直接安装执行本 Skill。
+### WorkBuddy
+
+1. 打开[下载页](https://github.com/flute/apple-watch-hypertension-skill/releases/latest)，在 **Assets** 中下载 **apple-watch-hypertension-workbuddy.zip**。
+2. 打开 WorkBuddy 的技能管理，选择**添加技能 / 导入 ZIP**，导入这个文件，不用解压。
+3. 新开对话，发送下一节的指令，让它准备环境并开始检查。
+
+找不到导入按钮，或提示无法执行本地命令？看[新手教程：WorkBuddy](references/beginner.zh-CN.md#workbuddy)。
+
+**其他 Agent：**见[适配说明](references/agents.md)。豆包、DeepSeek 的普通网页和手机聊天不支持直接安装执行本 Skill。
 
 ## 装好后，把这句话发给 AI
 

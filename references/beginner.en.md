@@ -1,20 +1,30 @@
 # Beginner guide: notifications unavailable in your region
 
-For mainland China and other regions where the feature is unavailable. Have a **Mac, a compatible Apple Watch, its paired iPhone and a USB data cable** ready. No programming experience or preinstalled Python, Git or Homebrew is needed.
+For regions where hypertension notifications are unavailable. Have a **Mac, a compatible Apple Watch, its paired iPhone and a USB data cable** ready. No programming experience or preinstalled Python, Git or Homebrew is needed.
 
 Choose your existing AI app below. Install and sign into the app itself first; it must be able to execute commands on this Mac.
 
-## WorkBuddy
+## Claude Code
 
-1. Open the [latest download page](https://github.com/flute/apple-watch-hypertension-skill/releases/latest).
-2. Under **Assets**, download **apple-watch-hypertension-workbuddy.zip**. Keep it zipped.
-3. Open WorkBuddy skill management → **Add skill / Import ZIP**, then select the file. Labels may vary.
-4. Wait for the skill to appear, start a new conversation and send the prompt under “Start setup” below.
-5. Let the agent prepare the runtime and inspect compatibility. Import success is not activation success.
+### Download
 
-**Cannot find the skill files or prepare dependencies?** First check that WorkBuddy can run commands on this Mac. If only the import directory is inaccessible, download and extract the regular **apple-watch-hypertension.zip**. Follow the Terminal instructions below, choosing **3** instead of 1. Keep that folder and give WorkBuddy its full path to read SKILL.md and use its scripts.
+1. Open the [download page](https://github.com/flute/apple-watch-hypertension-skill/releases/latest), expand **Assets**, and download **apple-watch-hypertension.zip**.
+2. Open Finder (the blue face in the Dock) → Downloads.
+3. Double-click the ZIP to extract it. Your browser may already have done so.
+4. Open the folder containing **SKILL.md, install.command and scripts**. Do not choose developer “Source code” downloads.
 
-Cloud-only command execution cannot control your Mac USB. Use a local execution mode or host. WorkBuddy's import format is adapted; hardware operation is not yet verified.
+### Open Terminal and install
+
+1. Press **Command + Space**, type **Terminal**, then Return.
+2. Type `bash ` with a trailing space. Do not press Return yet.
+3. Drag **install.command** from Finder into Terminal to insert its path.
+4. Click Terminal, press Return, then enter **2** and Return at the menu.
+5. Wait for **Setup complete**. If an error appears, use troubleshooting below.
+6. Start a new Claude Code conversation and send the prompt below. Restart Claude Code if the skill is missing; if needed, provide the full installation path printed by setup.
+
+The installer prepares isolated Python 3.11 and dependencies. It does not change system Python or require sudo, administrator passwords or Xcode. Cancel any developer-tools prompt and follow the steps above.
+
+Other options: **1** is Codex; **3** prepares the current folder; **4** uses a custom skills parent; **q** quits.
 
 ## Codex
 
@@ -38,6 +48,18 @@ The installer prepares isolated Python 3.11 and dependencies. It does not change
 
 Menu **2** is for Claude Code; **3** prepares the current folder only; **4** takes another agent's known skills-parent directory; **q** quits. Codex users choose **1**.
 
+## WorkBuddy
+
+1. Open the [latest download page](https://github.com/flute/apple-watch-hypertension-skill/releases/latest).
+2. Under **Assets**, download **apple-watch-hypertension-workbuddy.zip**. Keep it zipped.
+3. Open WorkBuddy skill management → **Add skill / Import ZIP**, then select the file. Labels may vary.
+4. Wait for the skill to appear, start a new conversation and send the prompt under “Start setup” below.
+5. Let the agent prepare the runtime and inspect compatibility. Import success is not activation success.
+
+**Cannot find the skill files or prepare dependencies?** First check that WorkBuddy can run commands on this Mac. If only the import directory is inaccessible, download and extract the regular **apple-watch-hypertension.zip**. Follow the Terminal instructions above, choosing **3** instead of 1. Keep that folder and give WorkBuddy its full path to read SKILL.md and use its scripts.
+
+Cloud-only command execution cannot control your Mac USB. Use a local execution mode or host. WorkBuddy's import format is adapted; hardware operation is not yet verified.
+
 ## Start setup
 
 Send:
@@ -48,7 +70,7 @@ If native setup already works, use Health normally. This workflow addresses regi
 
 ## Other AI apps
 
-Claude Code uses installer option **2**. See [compatibility](agents.md) for other hosts. Ordinary Doubao/DeepSeek web and mobile chat cannot directly install and execute this skill. No model API configuration is needed for this workflow. If these models already run inside a local agent, install for that host.
+See [compatibility](agents.md) for other hosts. Ordinary Doubao/DeepSeek web and mobile chat cannot directly install and execute this skill. No model API configuration is needed for this workflow. If these models already run inside a local agent, install for that host.
 
 ## What you may need to do on the phone
 

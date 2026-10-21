@@ -4,13 +4,13 @@
 
 **Your Watch supports the feature, but Health says it is unavailable in your region? Let an AI agent help enable it and restore your real location afterward.**
 
-This skill is for users in **mainland China and other regions where hypertension notifications are not available**. It connects an iPhone to a Mac, temporarily supplies a Hong Kong location, and assists with Health setup. The agent asks and waits when you need to connect, unlock or answer a question.
+This skill is for users in **regions where hypertension notifications are not available**. It connects an iPhone to a Mac, temporarily supplies a Hong Kong location, and assists with Health setup. The agent asks and waits when you need to connect, unlock or answer a question.
 
-**WorkBuddy and Codex are the main setup paths**, with Claude Code and other local agents also supported. If the feature already works in your region, follow [Apple's normal setup steps](https://support.apple.com/en-us/117296).
+Supports **Claude Code, Codex, WorkBuddy**, and other local agents on a Mac. If the feature already works in your region, follow [Apple's normal setup steps](https://support.apple.com/en-us/117296).
 
 ## What you need
 
-- A **Mac** with **WorkBuddy or Codex** able to execute local commands.
+- A **Mac** with **Claude Code, Codex or WorkBuddy** able to execute local commands.
 - A compatible **Apple Watch** and its paired **iPhone**.
 - A **USB data cable**.
 
@@ -18,13 +18,14 @@ No preinstalled Python, Git or Homebrew is needed. Apple's [hardware, software a
 
 ## Install for your agent
 
-### WorkBuddy
+### Claude Code
 
-1. Open the [download page](https://github.com/flute/apple-watch-hypertension-skill/releases/latest) and download **apple-watch-hypertension-workbuddy.zip** under **Assets**.
-2. Open WorkBuddy skill management → **Add skill / Import ZIP**. Import the ZIP without extracting it.
-3. Start a new conversation and send the prompt below. Let the agent prepare the runtime and check your setup.
+1. Download **apple-watch-hypertension.zip** from the [download page](https://github.com/flute/apple-watch-hypertension-skill/releases/latest) and double-click to unzip.
+2. Press **Command + Space**, type **Terminal**, then Return.
+3. Type `bash ` with a trailing space. Drag **install.command** from the extracted folder into Terminal, then press Return.
+4. Enter **2** and Return. Wait for **Setup complete**, then start a new Claude Code conversation.
 
-Cannot find import or run local commands? See the [WorkBuddy walkthrough](references/beginner.en.md#workbuddy).
+The installer prepares Python and dependencies. See the [beginner walkthrough](references/beginner.en.md#claude-code) if you have never used Terminal.
 
 ### Codex
 
@@ -35,7 +36,15 @@ Cannot find import or run local commands? See the [WorkBuddy walkthrough](refere
 
 The installer prepares Python and dependencies. See the [beginner walkthrough](references/beginner.en.md#codex) if you have never used Terminal.
 
-**Claude Code / other agents:** see [compatibility](references/agents.md). Ordinary Doubao and DeepSeek web/mobile chat cannot directly install and execute this skill.
+### WorkBuddy
+
+1. Open the [download page](https://github.com/flute/apple-watch-hypertension-skill/releases/latest) and download **apple-watch-hypertension-workbuddy.zip** under **Assets**.
+2. Open WorkBuddy skill management → **Add skill / Import ZIP**. Import the ZIP without extracting it.
+3. Start a new conversation and send the prompt below. Let the agent prepare the runtime and check your setup.
+
+Cannot find import or run local commands? See the [WorkBuddy walkthrough](references/beginner.en.md#workbuddy).
+
+**Other agents:** see [compatibility](references/agents.md). Ordinary Doubao and DeepSeek web/mobile chat cannot directly install and execute this skill.
 
 ## Send this to your agent
 

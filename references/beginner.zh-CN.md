@@ -1,22 +1,30 @@
 # 新手教程：开通因地区限制不可用的高血压通知
 
-适合中国大陆等尚未开放该功能的地区。准备好 **Mac、支持该功能的 Apple Watch、配对的 iPhone 和 USB 数据线**。不需要会编程，也不需要提前安装 Python、Git 或 Homebrew。
+适合尚未开放高血压通知的地区。准备好 **Mac、支持该功能的 Apple Watch、配对的 iPhone 和 USB 数据线**。不需要会编程，也不需要提前安装 Python、Git 或 Homebrew。
 
-选你已经在用的 AI：**WorkBuddy 看下一节，Codex 看后面的“Codex”一节**。这里安装的是 Skill；AI 软件本身需要先安装、登录，并能在这台 Mac 执行操作。
+选你已经在用的 AI：**[Claude Code](#claude-code)、[Codex](#codex)、[WorkBuddy](#workbuddy)**。这里安装的是 Skill；AI 软件本身需要先安装、登录，并能在这台 Mac 执行操作。
 
-## WorkBuddy
+## Claude Code
 
-1. 在 Mac 浏览器打开[最新下载页](https://github.com/flute/apple-watch-hypertension-skill/releases/latest)。
-2. 找到 **Assets**，下载 **apple-watch-hypertension-workbuddy.zip**。保留 ZIP，不用解压。
-3. 打开 WorkBuddy，进入技能管理，选择**添加技能 / 导入 ZIP**，选中下载的文件。按钮名称可能随版本变化。
-4. 等技能出现在列表中，新开一个对话，发送下面“开始开通”中的指令。
-5. 让 AI 自动准备环境，再检查手机。安装成功不等于功能已开通。
+### 下载
 
-**提示无法访问技能文件或准备环境？**
+1. 打开[最新下载页](https://github.com/flute/apple-watch-hypertension-skill/releases/latest)，在 **Assets** 下载 **apple-watch-hypertension.zip**。
+2. 打开“访达”（Dock 上的蓝白笑脸图标），左边点“下载”。
+3. 双击 ZIP 解压。若浏览器已经解压，直接打开文件夹。
+4. 文件夹内应有 **SKILL.md、install.command、scripts**。下载页的 **Source code** 是给开发者的，不选它。
 
-先让 WorkBuddy 检查能否在这台 Mac 执行命令。若只是找不到导入目录，可另下载普通的 **apple-watch-hypertension.zip** 并解压，按下面 Codex 的终端步骤运行安装文件，但菜单选择 **3**。然后把保留的文件夹完整路径告诉 WorkBuddy，让它读取这里的 SKILL.md、使用这里的脚本。
+### 打开终端，运行安装
 
-如果只能在云端运行命令，就不能直接控制这台 Mac 的 USB；换用能在本机执行的模式或 Agent。WorkBuddy 的导入格式已适配，尚未完成实机验证。
+1. 按 **⌘ Command + 空格**，输入“终端”或“Terminal”，按回车。
+2. 在出现的窗口输入 `bash `，**末尾有一个空格，先不要回车**。
+3. 切回访达，把 **install.command** 拖进终端，文件路径会自动填入。
+4. 点回终端，按回车。出现菜单后，输入 **2** 并回车。
+5. 等末尾显示 **“安装完成 / Setup complete”**。下载速度因网络而异；明确报错时先看后面的排错说明。
+6. 回到 Claude Code，新开对话，发送下面的指令。若找不到技能，重启 Claude Code；仍找不到就将安装末尾显示的完整路径给它。
+
+安装程序自动准备独立的 Python 3.11 和依赖，不修改系统 Python，不需要管理员密码、sudo 或 Xcode。若系统要求安装开发者工具，取消后按上面的步骤重试。
+
+其他菜单选项：**1** 为 Codex，**3** 只准备当前文件夹，**4** 为自定义技能目录，**q** 退出。
 
 ## Codex
 
@@ -40,6 +48,20 @@
 
 菜单里的 **2** 用于 Claude Code，**3** 只准备当前文件夹，**4** 用于已知的其他 Agent 技能父目录，**q** 退出。Codex 用户选 **1** 即可。
 
+## WorkBuddy
+
+1. 在 Mac 浏览器打开[最新下载页](https://github.com/flute/apple-watch-hypertension-skill/releases/latest)。
+2. 找到 **Assets**，下载 **apple-watch-hypertension-workbuddy.zip**。保留 ZIP，不用解压。
+3. 打开 WorkBuddy，进入技能管理，选择**添加技能 / 导入 ZIP**，选中下载的文件。按钮名称可能随版本变化。
+4. 等技能出现在列表中，新开一个对话，发送下面“开始开通”中的指令。
+5. 让 AI 自动准备环境，再检查手机。安装成功不等于功能已开通。
+
+**提示无法访问技能文件或准备环境？**
+
+先让 WorkBuddy 检查能否在这台 Mac 执行命令。若只是找不到导入目录，可另下载普通的 **apple-watch-hypertension.zip** 并解压，按上面 Codex 的终端步骤运行安装文件，但菜单选择 **3**。然后把保留的文件夹完整路径告诉 WorkBuddy，让它读取这里的 SKILL.md、使用这里的脚本。
+
+如果只能在云端运行命令，就不能直接控制这台 Mac 的 USB；换用能在本机执行的模式或 Agent。WorkBuddy 的导入格式已适配，尚未完成实机验证。
+
 ## 开始开通
 
 把这段话发给 AI：
@@ -50,7 +72,7 @@
 
 ## 其他 AI
 
-Claude Code 可用安装菜单 **2**。更多产品看[适配表](agents.md)。
+更多产品看[适配表](agents.md)。
 
 豆包、DeepSeek 的普通网页和手机聊天不能直接安装执行这个 Skill；不用为本流程配置模型 API 或发送密钥。已经把这些模型接到本地 Agent 的用户，按那个 Agent 的方式安装。
 
